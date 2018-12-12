@@ -9,8 +9,8 @@
 <p><%= link_to "Sign Out Agent", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 <p>-----------------------</p>
 <% else %>
-<p><%= link_to "Sign In", new_agent_session_path , class: "btn btn-primary"%></p>
-<p><%= link_to "New User Registration", new_agent_registration_path , class: "btn btn-primary"%></p>
+<p><%= link_to "Agent Sign In", new_agent_session_path , class: "btn btn-primary"%></p>
+<p><%= link_to "New Agent Registration", new_agent_registration_path , class: "btn btn-primary"%></p>
 
 <% end %>
 <p><%= link_to "Home", root_path , class: "btn btn-primary"%></p>

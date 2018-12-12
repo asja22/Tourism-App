@@ -64,13 +64,16 @@ class Agents::RegistrationsController < Devise::RegistrationsController
   # end
   
   protected
-
     def after_sign_up_path_for(resource)
       agent_home_path
     end
-  
+   
   protected
-
+          def after_update_path_for(resource)
+            agent_home_path(resource)
+          end
+          
+  protected
      def configure_permitted_parameters
          devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password)}
          devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password)}

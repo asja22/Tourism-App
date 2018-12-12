@@ -9,8 +9,8 @@
 <p><%= link_to "Sign Out Admin", destroy_admin_session_path, :method => :delete , class: "btn btn-primary" %></p>
 <p>-----------------------</p>
 <% else %>
-<p><%= link_to "Sign In", new_admin_session_path , class: "btn btn-primary"%></p>
-<p><%= link_to "New User Registration", new_admin_registration_path , class: "btn btn-primary"%></p>
+<p><%= link_to "Admin Sign In", new_admin_session_path , class: "btn btn-primary"%></p>
+<p><%= link_to "New Admin Registration", new_admin_registration_path , class: "btn btn-primary"%></p>
 
 <% end %>
 <p><%= link_to "Home", root_path , class: "btn btn-primary"%></p>
