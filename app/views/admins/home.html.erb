@@ -1,0 +1,20 @@
+<center>
+<div class="container">
+<div class="center jumbotron">
+<h1>Admins Home Page for Tour App</h1>
+
+<% if admin_signed_in? %>
+<P>Welcome ! <%= current_admin.name %></p>
+<P><%= link_to 'Edit Profile', edit_admin_registration_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Sign Out Admin", destroy_admin_session_path, :method => :delete , class: "btn btn-primary" %></p>
+<p>-----------------------</p>
+<% else %>
+<p><%= link_to "Sign In", new_admin_session_path , class: "btn btn-primary"%></p>
+<p><%= link_to "New User Registration", new_admin_registration_path , class: "btn btn-primary"%></p>
+
+<% end %>
+<p><%= link_to "Home", root_path , class: "btn btn-primary"%></p>
+
+</div>
+</div>
+</center>
