@@ -7,9 +7,9 @@
 <P>Welcome ! <%= current_user.name %></p>
 <P><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "btn btn-primary" %></p>
-
-<% else %>
 <p>-----------------------</p>
+<% else %>
+
 <p><%= link_to "Sign In", new_user_session_path , class: "btn btn-primary"%></p>
 <p><%= link_to "New User Registration", new_user_registration_path , class: "btn btn-primary"%></p>
 

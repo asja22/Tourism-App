@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
   devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" ,passwords: 'admins/passwords',registrations: 'admins/registrations'}
-  get '/admin_home' => 'admins#home' 
+  get '/admin_home', to: 'admins#home' 
   
   devise_for :agents, path: 'agents', controllers: { sessions: "agents/sessions" ,passwords: 'agents/passwords',registrations: 'agents/registrations'}
-  get '/agent_home' => 'agents#home' 
+  get '/agent_home', to: 'agents#home' 
   
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions" ,passwords: 'users/passwords',registrations: 'users/registrations'}
   
