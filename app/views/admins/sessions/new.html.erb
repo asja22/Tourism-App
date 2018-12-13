@@ -1,15 +1,23 @@
+<center>
+<div class="container">
 <h2>Admin Log in Page</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <table class="table table1 table-borderless">
+  <tr>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <td><%= f.label :email %></td>
+    <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
   </div>
-
+  </tr>
+  
+  <tr>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <td><%= f.label :password %></td>
+    <td><%= f.password_field :password, autocomplete: "current-password" %></td>
   </div>
+  </tr>
+</table>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
@@ -22,5 +30,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+</br>
 <%= render "admins/shared/links" %>
+</div>
+</center>
