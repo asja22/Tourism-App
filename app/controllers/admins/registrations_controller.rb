@@ -66,7 +66,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     def after_sign_up_path_for(resource)
       admin_home_path
     end
-   
+     
   protected
         def after_update_path_for(resource)
           admin_home_path(resource)

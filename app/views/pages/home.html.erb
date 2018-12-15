@@ -7,19 +7,18 @@
 <P>Welcome ! <%= current_user.name %></p>
 <P><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "btn btn-primary" %></p>
-<p>-----------------------</p>
 
 <% elsif current_admin %>
 <P>Welcome Admin! <%= current_admin.name %></p>
+<P><%= link_to 'Admin Home Page', admin_home_path, class: "btn btn-primary" %></p>
 <P><%= link_to 'Edit Admin Profile', edit_admin_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Admin Sign Out", destroy_admin_session_path, :method => :delete , class: "btn btn-primary" %></p>
-<p>-----------------------</p>
 
 <% elsif current_agent %>
 <P>Welcome Agent! <%= current_agent.name %></p>
+<P><%= link_to 'Admin Home Page', agent_home_path, class: "btn btn-primary" %></p>
 <P><%= link_to 'Edit Agent Profile', edit_agent_registration_path, class: "btn btn-primary" %></p>
-<p><%= link_to "Admin Sign Out", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
-<p>-----------------------</p>
+<p><%= link_to "Agent Sign Out", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
 <% else %>
 

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<div class="container">
 	<%= link_to "Tourism", '#',:class=>"navbar-brand"%>
   
@@ -31,8 +31,9 @@
 		</li>
   		<% elsif current_admin %>
         <li class="nav-item dropdown active">
-  			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome ! <%= current_admin.name %></a>
+  			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin! <%= current_admin.name %></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a><%= link_to 'Admin Home Page', admin_home_path, class: "dropdown-item" %></a>
   		  <a><%= link_to 'Edit Admin Profile', edit_admin_registration_path, class: "dropdown-item" %></a>
             <div class="dropdown-divider"></div>
   		  <a><%= link_to "Admin Sign Out", destroy_admin_session_path, :method => :delete , class: "dropdown-item" %></a>
@@ -40,8 +41,9 @@
   		</li>
   		<% elsif current_agent %>
         <li class="nav-item dropdown active">
-  			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome ! <%= current_agent.name %></a>
+  			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Agent! <%= current_agent.name %></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a><%= link_to 'Agent Home Page', agent_home_path, class: "dropdown-item" %></a>
   		  <a><%= link_to 'Edit Agent Profile', edit_agent_registration_path, class: "dropdown-item" %></a>
             <div class="dropdown-divider"></div>
   		  <a><%= link_to "Agent Sign Out", destroy_agent_session_path, :method => :delete , class: "dropdown-item" %></a>
