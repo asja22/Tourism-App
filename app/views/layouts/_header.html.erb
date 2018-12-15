@@ -5,16 +5,16 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
 		  <%= link_to "Home",root_path, :class=>"nav-link" %>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
 		  <%= link_to "Tour Packages",'#', :class=>"nav-link" %>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
 		  <%= link_to "Cruze",'#', :class=>"nav-link" %>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
 		  <%= link_to "Visa",'#', :class=>"nav-link" %>
       </li>
     </ul>
@@ -51,10 +51,10 @@
   		</li>
 		<% else %>
         <li class="nav-item active">
-  		  <a><%= link_to "Sign In",new_user_session_path, :class=>"nav-link" %></a>
+  		  <a><%= link_to "Sign In",new_user_session_path, :class=>"btn btn-outline-primary" %></a> &nbsp
         </li>
         <li class="nav-item active">
-  		  <a><%= link_to "New User",new_user_registration_path, :class=>"nav-link" %></a>
+  		  <a><%= link_to "New User",new_user_registration_path, :class=>"btn btn-outline-success" %></a>
         </li>
 		<% end %>
     </ul>
