@@ -1,0 +1,18 @@
+<div class="container">
+<footer class="footer">
+  <small>
+    Online tour Packages booking portal
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+	  <% if signed_in? %>
+	  <% else %>
+	  <li><%= link_to "Agent Home", agent_home_path %></li>
+      <li><%= link_to "Admin Home", admin_home_path %></li>
+	  <% end %>
+    </ul>
+  </nav>
+</footer>
+</div>
