@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" ,passwords: 'admins/passwords',registrations: 'admins/registrations'}
   get '/admin_home', to: 'admins#home' 
   
@@ -12,5 +11,10 @@ Rails.application.routes.draw do
   
   get '/help', to: 'pages#help'
   get '/contact', to: 'pages#contact'
+  
+  resources :packages
+  get '/new', to: 'packages#new'
+  get '/packages_home', to: 'packages#home'
+  #get '/packages_new', to:'packages#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

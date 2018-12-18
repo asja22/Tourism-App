@@ -16,7 +16,7 @@
 
 <% elsif current_agent %>
 <P>Welcome Agent! <%= current_agent.name %></p>
-<P><%= link_to 'Admin Home Page', agent_home_path, class: "btn btn-primary" %></p>
+<P><%= link_to 'Agent Home Page', agent_home_path, class: "btn btn-primary" %></p>
 <P><%= link_to 'Edit Agent Profile', edit_agent_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Agent Sign Out", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 

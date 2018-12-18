@@ -8,6 +8,12 @@
 	width:50%;
 }
 
+.table3 {
+    border-collapse: separate;
+    border-spacing: 15px;
+	width:100%;
+}
+
 /*flash*/
 .alert-error {
     background-color: #f2dede;
@@ -40,6 +46,7 @@
  /* footer */
 
  footer {
+	 
    margin-top: 45px;
    padding-top: 5px;
    border-top: 1px solid #eaeaea;
@@ -66,4 +73,9 @@
  footer ul li {
    float: left;
    margin-left: 15px;
+ }
+ 
+ /* trix */ 
+.editor {
+   background-color: #ffffff;
  }

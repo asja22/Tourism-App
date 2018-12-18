@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_080521) do
+ActiveRecord::Schema.define(version: 2018_12_18_152132) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,36 @@ ActiveRecord::Schema.define(version: 2018_12_12_080521) do
     t.string "name"
     t.index ["email"], name: "index_agents_on_email", unique: true
     t.index ["reset_password_token"], name: "index_agents_on_reset_password_token", unique: true
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.string "name"
+    t.integer "days"
+    t.integer "nights"
+    t.string "departure"
+    t.integer "country_id"
+    t.integer "province_id"
+    t.text "itinerary"
+    t.decimal "price"
+    t.string "includes"
+    t.integer "agent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agent_id", "created_at"], name: "index_packages_on_agent_id_and_created_at"
+    t.index ["agent_id"], name: "index_packages_on_agent_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.string "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
