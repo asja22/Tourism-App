@@ -42,9 +42,9 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
     # add_index :admins, :unlock_token,         unique: true
     
     # Initialize first account:
-        Admin.create! do |u|
-            u.email     = 'ashok@sample.com'
-            u.password    = 'asdfghlkj'
-        end
+      #  Admin.create! do |u|
+        #    u.email     = 'ashok@sample.com'
+         #   u.password    = 'asdfghlkj'
+      #  end
   end
 end
