@@ -2,6 +2,7 @@
 
 class Admins::RegistrationsController < Devise::RegistrationsController
   include Accessible
+  before_action :authenticate_admin!
   skip_before_action :check_user, except: [:new, :create]
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :configure_sign_up_params, only: [:create]

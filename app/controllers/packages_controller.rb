@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
-  before_action :authenticate_agent!
+  before_action :authenticate_agent!, except: [:index, :show]
   
   def home
   end

@@ -2,6 +2,7 @@
 
 class Admins::SessionsController < Devise::SessionsController
   include Accessible
+  before_action :authenticate_admin!
   skip_before_action :check_user, only: :destroy
   # before_action :configure_sign_in_params, only: [:create]
 

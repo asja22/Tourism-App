@@ -1,6 +1,7 @@
 class Package < ApplicationRecord
   belongs_to :agent
   
+  
   belongs_to :country
   belongs_to :province
  
