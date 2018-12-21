@@ -1,11 +1,24 @@
 class PackagesController < ApplicationController
-  before_action :authenticate_agent!, except: [:index, :show]
+  #before_action :authenticate_agent! , except: [:index, :show]
+  #before_action :authenticate_admin! , only: [:index, :show]
   
+  before_action do
+    if current_agent
+      authenticate_agent!
+    elsif current_admin
+      authenticate_admin!
+    end
+  end
+   
   def home
   end
   
   def index
-    @package=current_agent.packages
+    if current_agent
+      @package=current_agent.packages
+    elsif current_admin
+      @package=Package.all
+    end
   end
 
   def new
@@ -49,5 +62,5 @@ class PackagesController < ApplicationController
   def package_params
         params.require(:package).permit(:name, :days, :nights, :departure, :country_id, :province_id, :itinerary, :price, :includes)
   end
-  
+      
 end
