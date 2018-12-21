@@ -7,7 +7,12 @@
     <th>Package Name: &nbsp; &nbsp; &nbsp;</th>
     <th><%= @package.name%></th>	
   </tr>
-  
+  <% if current_admin %>
+  <tr>
+    <th>Agent Name: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @package.agent.name%></th>	
+  </tr>
+  <% end %>
   <tr>
     <th>Duration: &nbsp; &nbsp; &nbsp;</th>
     <th><%= @package.days%> Days & <%= @package.nights%> Nights&nbsp; &nbsp; </th>	
