@@ -2,6 +2,7 @@
 <div class="container">
 <div class="center jumbotron">
 <h1>Details of Tour Packages</h1>
+
 <table class="table table-hover table-bordered text-left" style="width:90%">
   <tr>
     <th>Package Name: &nbsp; &nbsp; &nbsp;</th>
@@ -43,8 +44,27 @@
     <th><%= @package.includes%> &nbsp; &nbsp; </th>	
   </tr>
 </table>
+
 <% if current_agent %>
 <p><%= link_to "Edit", edit_package_path(@package), class: "btn btn-primary" %></p>
+<% end %>
+
+<% if current_admin %>
+<h3>Details of Agency :</h3>
+<table class="table table-hover table-bordered" style="width:90%">
+  <tr>
+    <th>Agent Name &nbsp; &nbsp; </th>
+	<th>Agent Email &nbsp; &nbsp; </th>
+	<th>Joined Date yy-mm-dd &nbsp; &nbsp; </th>	
+  </tr>
+
+    <tr>
+    <td><%= @package.agent.name%></td> 
+	<td><%= @package.agent.email%></td> 
+	<td>><%= @package.agent.created_at.to_date%></td>  
+    </tr>
+</table>
+
 <% end %>
 <p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
 </div>
