@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   devise_for :agents, path: 'agents', controllers: { sessions: "agents/sessions" ,passwords: 'agents/passwords',registrations: 'agents/registrations'}
   get '/agent_home', to: 'agents#home' 
+  resources :agents , only: [:show]
   
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions" ,passwords: 'users/passwords',registrations: 'users/registrations'}
   

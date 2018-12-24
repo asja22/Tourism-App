@@ -5,7 +5,9 @@
 
 <% if agent_signed_in? %>
 <P>Welcome ! <%= current_agent.name %></p>
-<P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>	
+<P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>
+<p> ------------------ </p>
+<P><%= link_to 'View profile', current_agent, class: "btn btn-primary" %></p>	
 <P><%= link_to 'Edit Profile', edit_agent_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out Agent", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
