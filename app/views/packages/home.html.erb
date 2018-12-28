@@ -12,6 +12,7 @@
 <% elsif current_admin %>
 <P>Welcome Admin! <%= current_admin.name %></p>
 <P><%= link_to 'List of Package', packages_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Package Approval", approval_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Back", admin_home_path , class: "btn btn-primary"%></p>
 
 <% else %>

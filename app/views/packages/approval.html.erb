@@ -1,0 +1,31 @@
+<center>
+<div class="container">
+<div class="center jumbotron">
+<h1>Tour Packages Approval</h1>
+<table class="table table-hover table-bordered" >
+  <tr>
+    <th>Package Name &nbsp; &nbsp; </th>
+	<th>Country &nbsp; &nbsp; </th>
+	<th>Province &nbsp; &nbsp; </th>
+	<th>Date of Departure &nbsp; &nbsp; </th>
+	<th>Agent Name &nbsp; &nbsp; </th>
+	<th>Approval &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>	
+  </tr>
+<% @package.each do |package| %>
+  <tr>
+    <td><%= package.name%></td> 
+	<td><%= package.country.name%></td> 
+	<td><%= package.province.name%></td> 
+	<td><%= package.departure%></td> 
+	<td><%= link_to package.agent.name, agent_path(package)%></td> 
+	<td><%= link_to "Approve_Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" } %></td>
+	<td><%= link_to "View", package %></td> 
+  </tr>
+<% end %>
+</table>
+</div>
+</div>
+	<p><%= link_to "Back", packages_home_path, class: "btn btn-primary" %></p>
+	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>
+</center>

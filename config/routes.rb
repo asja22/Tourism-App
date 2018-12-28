@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :packages
   get '/new', to: 'packages#new'
   get '/packages_home', to: 'packages#home'
+  get '/approval', to: 'packages#approval'
+  put 'approve/:id', to: 'packages#approve', as: :approve #(approve_path in approval.html.erb)
+
   #get '/packages_new', to:'packages#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

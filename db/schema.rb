@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_152132) do
+ActiveRecord::Schema.define(version: 2018_12_28_082518) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_152132) do
     t.integer "agent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "approved", default: false
     t.index ["agent_id", "created_at"], name: "index_packages_on_agent_id_and_created_at"
     t.index ["agent_id"], name: "index_packages_on_agent_id"
   end

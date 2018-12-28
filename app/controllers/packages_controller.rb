@@ -62,5 +62,24 @@ class PackagesController < ApplicationController
   def package_params
         params.require(:package).permit(:name, :days, :nights, :departure, :country_id, :province_id, :itinerary, :price, :includes)
   end
+  
+  
+  def approval
+    if current_admin
+      @package=Package.where(:approved => false)
+    else
+      redirect_to root_path
+    end
+  end
+  
+  def approve
+    @package = Package.find(params[:id])
+      if @package.update_attribute(:approved, true)
+        flash[:success] = "Tour Package Approved for Publishing"
+              redirect_to @package
+      else
+        render 'approval'
+      end
+  end
       
 end
