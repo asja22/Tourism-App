@@ -5,10 +5,13 @@
 
 <% if admin_signed_in? %>
 <P>Welcome ! <%= current_admin.name %></p>
-<P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>
+<P><%= link_to 'Tour Packages Management', packages_home_path, class: "btn btn-primary" %></p>
+<P><%= link_to 'Agents Management',agents_path, class: "btn btn-primary" %></p>
+<P><%= link_to 'Users Management',users_path, class: "btn btn-primary" %></p>
+	<p>-----------------------</p>
 <P><%= link_to 'Edit Profile', edit_admin_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out Admin", destroy_admin_session_path, :method => :delete , class: "btn btn-primary" %></p>
-<p>-----------------------</p>
+
 <% else %>
 <p><%= link_to "Admin Sign In", new_admin_session_path , class: "btn btn-primary"%></p>
 <p><%= link_to "New Admin Registration", new_admin_registration_path , class: "btn btn-primary"%></p>

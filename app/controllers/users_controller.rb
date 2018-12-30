@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
   
-  def show
-    if current_user
-      @user = User.find(params[:id])
+  def index
+    if current_admin
+      @user = User.all
+    else
+      redirect_to root_path
     end
+  end
+  
+  def show
+      @user = User.find(params[:id])
   end
   
 end

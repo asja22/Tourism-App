@@ -6,6 +6,7 @@
 <% if agent_signed_in? %>
 <P>Welcome ! <%= current_agent.name %></p>
 <P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>
+<P><%= link_to 'List of Agents', agents_path, class: "btn btn-primary" %></p>
 <p> ------------------ </p>
 <P><%= link_to 'View profile', current_agent, class: "btn btn-primary" %></p>	
 <P><%= link_to 'Edit Profile', edit_agent_registration_path, class: "btn btn-primary" %></p>

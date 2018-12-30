@@ -22,8 +22,13 @@
 </table>
 
 <% if current_admin %>
-<p><%= link_to "Back", approval_path, class: "btn btn-primary" %></p>
-    <p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
+      <% cont=Rails.application.routes.recognize_path(request.referrer) %>  
+      <% if cont[:controller] == 'agents' %>
+         <p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>
+	  <% elsif cont[:controller] == 'packages' %> 
+	     <p><%= link_to "Back", packages_path, class: "btn btn-primary" %></p>
+	  <% end %>
+  <p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
 <% elsif current_agent %>
 	<p><%= link_to "Back", agent_home_path, class: "btn btn-primary" %></p>
 	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>
