@@ -1,32 +1,33 @@
 <center>
 <div class="container">
 <div class="center jumbotron">
-<h1>Details of Agent</h1>
+<h1>Users Profile Page</h1>
 
 <table class="table table-hover table-bordered text-left" style="width:90%">
  
   <tr>
-    <th>Agent Name: &nbsp; &nbsp; &nbsp;</th>
-    <th><%= @agent.name%></th>	
+    <th>User Name: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @user.name%></th>	
   </tr>
   
   <tr>
-    <th>Agent Email: &nbsp; &nbsp; &nbsp;</th>
-    <th><%= @agent.email%></th>	
+    <th>User Email: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @user.email%></th>	
   </tr>
   
   <tr>
     <th>Join date: &nbsp; &nbsp; &nbsp;</th>
-    <th><%= @agent.created_at.to_date%></th>	
+    <th><%= @user.created_at.to_date%></th>	
   </tr>
 </table>
 
 <% if current_admin %>
-<p><%= link_to "Back", approval_path, class: "btn btn-primary" %></p>
-    <p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
+    <p><%= link_to "Back to users list", '#' , class: "btn btn-primary" %></p>
 <% elsif current_agent %>
 	<p><%= link_to "Back", agent_home_path, class: "btn btn-primary" %></p>
 	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>
+<% elsif current_user %>
+	<p><%= link_to "Back", root_path, class: "btn btn-primary" %></p>
 <% end %>
 
 

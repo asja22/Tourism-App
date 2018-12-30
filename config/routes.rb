@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :agents , only: [:show]
   
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions" ,passwords: 'users/passwords',registrations: 'users/registrations'}
+  resources :users , only: [:show]
+  
   
   root 'pages#home'
   

@@ -5,6 +5,7 @@
 
 <% if current_user %>
 <P>Welcome ! <%= current_user.name %></p>
+<P><%= link_to 'View Profile', current_user, class: "btn btn-primary" %></p>
 <P><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
