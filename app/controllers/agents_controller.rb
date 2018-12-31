@@ -13,7 +13,7 @@ class AgentsController < ApplicationController
       cont=Rails.application.routes.recognize_path(request.referrer) 
       if cont[:controller] == 'agents'
         @agent = Agent.find(params[:id])
-      else
+      elsif cont[:controller] == 'packages'
         @package = Package.find(params[:id])
         @agent = @package.agent
       end
