@@ -24,6 +24,7 @@
       <li class="nav-item dropdown active">
 			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome ! <%= current_user.name %></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a><%= link_to 'View Profile', current_user, class: "dropdown-item" %></a>
 		  <a><%= link_to 'Edit Profile', edit_user_registration_path, class: "dropdown-item" %></a>
           <div class="dropdown-divider"></div>
 		  <a><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "dropdown-item" %></a>
@@ -44,6 +45,7 @@
   			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Agent! <%= current_agent.name %></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		  <a><%= link_to 'Agent Home Page', agent_home_path, class: "dropdown-item" %></a>
+		  <a><%= link_to 'View Agent Profile', current_agent, class: "dropdown-item" %></a>
   		  <a><%= link_to 'Edit Agent Profile', edit_agent_registration_path, class: "dropdown-item" %></a>
             <div class="dropdown-divider"></div>
   		  <a><%= link_to "Agent Sign Out", destroy_agent_session_path, :method => :delete , class: "dropdown-item" %></a>
