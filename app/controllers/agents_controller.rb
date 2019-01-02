@@ -3,7 +3,11 @@ class AgentsController < ApplicationController
   end
   
   def index
-    @agent = Agent.all
+    if current_admin
+      @agent = Agent.all
+    else
+      redirect_to root_path
+    end
   end
   
   def show

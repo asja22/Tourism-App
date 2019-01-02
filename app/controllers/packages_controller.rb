@@ -17,8 +17,13 @@ class PackagesController < ApplicationController
     if current_agent
       @package=current_agent.packages
     elsif current_admin
-      @package=Package.all
+        @package=Package.all
     end
+  end
+  
+  def index_packages_agent
+    @agent = Agent.find(params[:id])
+    @package = @agent.packages
   end
 
   def new
