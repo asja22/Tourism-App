@@ -71,7 +71,7 @@ class PackagesController < ApplicationController
   
   def approval
     if current_admin
-      @package=Package.where(:approved => false)
+      @package=Package.approved?
     else
       redirect_to root_path
     end
