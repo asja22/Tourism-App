@@ -24,4 +24,24 @@ class AgentsController < ApplicationController
     end
   end
   
+  def activate
+    @agent = Agent.find(params[:id])
+      if @agent.update_attribute(:status, true)
+        flash[:success] = "Agent Profile Activated"
+              redirect_to @agent
+      else
+        render 'show'
+      end
+  end
+  
+  def deactivate
+    @agent = Agent.find(params[:id])
+      if @agent.update_attribute(:status, false)
+        flash[:success] = "Agent Profile De-Activated"
+              redirect_to @agent
+      else
+        render 'show'
+      end
+  end
+  
 end

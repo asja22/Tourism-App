@@ -4,8 +4,16 @@
 <h1>Agents Home Page for Tour App</h1>
 
 <% if agent_signed_in? %>
-<P>Welcome ! <%= current_agent.name %></p>
-<P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>
+	<P>Welcome ! <%= current_agent.name %></p>
+<% if current_agent.status? %>
+	<P><%= link_to 'Tour Package Management', packages_home_path, class: "btn btn-primary" %></p>
+<% else %>
+<table class="table table-hover table-bordered" >
+  <tr>
+    <th><font color="red">Agent Profile De-Activate </br> Contact Administrator to Active your Account  </font></th>
+  </tr>
+</table>
+<% end %>
 <p> ------------------ </p>
 <p><%= link_to "Sign Out Agent", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
