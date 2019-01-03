@@ -21,18 +21,23 @@
   </tr>
 </table>
 
-<% if current_admin %>
+<!-- <% if current_admin %>
 	<% if @agent.status? %>
 		<p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
 		<% else %>
 		<p><%= link_to "Activate Agent",activate_path(@agent), method: :put, data: { confirm: "You sure Activate Agent ?" }, class: "btn btn-primary" %></p>
 	<% end %>
-<% end %>
+<% end %>  -->
 	
 
 <% if current_admin %>
       <% cont=Rails.application.routes.recognize_path(request.referrer) %>  
       <% if cont[:controller] == 'agents' %>
+  	     <% if @agent.status? %>
+  		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
+  		 <% else %>
+  		    <p><%= link_to "Activate Agent",activate_path(@agent), method: :put, data: { confirm: "You sure Activate Agent ?" }, class: "btn btn-primary" %></p>
+  	     <% end %>
          <p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>
 	  <% elsif cont[:controller] == 'packages' %> 
 	     <p><%= link_to "Packages List", packages_path, class: "btn btn-primary" %></p>
