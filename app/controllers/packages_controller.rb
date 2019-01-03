@@ -21,7 +21,7 @@ class PackagesController < ApplicationController
     end
   end
   
-  def index_packages_agent
+  def packages_agent
     @agent = Agent.find(params[:id])
     @package = @agent.packages
   end

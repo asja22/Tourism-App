@@ -16,7 +16,7 @@
 	<td><%= agent.email%></td> 
 	<td><%= agent.created_at.to_date%></td> 
   <% if current_admin %>
-	<td><%=link_to agent.packages.count, index_packages_agent_path(agent) %></td>
+	<td><%=link_to agent.packages.count, packages_agent_path(agent) %></td>
   <% else %>
 	<td><%= agent.packages.count%></td> 
   <% end %>
