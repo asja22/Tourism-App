@@ -8,8 +8,8 @@
 	<th>Country &nbsp; &nbsp; </th>
 	<th>Province &nbsp; &nbsp; </th>
 	<th>Date of Departure &nbsp; &nbsp; </th>
-	<% if current_admin %>
 	<th>Status &nbsp; &nbsp; </th>
+	<% if current_admin %>
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
 	<% elsif current_agent %>
@@ -27,12 +27,12 @@
 	<td><%= package.country.name%></td> 
 	<td><%= package.province.name%></td> 
 	<td><%= package.departure%></td> 
+	<% if package.approved? %> 
+		<td><%= "Approved"%></td>  
+	<% else %>
+		<td><%= "Waiting for approval"%></td> 
+	<% end %>
 	<% if current_admin %> 
-		<% if package.approved? %> 
-			<td><%= "Approved"%></td>  
-		<% else %>
-			<td><%= "Waiting for approval"%></td> 
-		<% end %>
 	<td><%= link_to package.agent.name, agent_path(package)%></td>
 	<td><%= link_to "View", package_path(package) %></td> 
 	<% elsif current_agent %> 
