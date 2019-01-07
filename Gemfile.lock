@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/fulvi0/populator.git
+  revision: cad8067b580f7e84fb3dcd4dabc3e95f6c4519ee
+  specs:
+    populator (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,7 +134,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     popper_js (1.14.5)
-    populator (1.0.0)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
@@ -236,7 +241,7 @@ DEPENDENCIES
   jquery-ui-rails
   listen (>= 3.0.5, < 3.2)
   pg (= 0.18.4)
-  populator
+  populator!
   puma (~> 3.11)
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
