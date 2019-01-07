@@ -9,5 +9,5 @@ Package.populate 64 do |package|
   package.price = 600..2500
   package.agent_id = 1..2
   package.includes = Populator.sentences(1)
-  package.approved = 0
+  package.approved = false
 end
