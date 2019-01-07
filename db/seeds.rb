@@ -1,13 +1,15 @@
-require "populator"
+require 'csv'
+puts "Importing countries..."
+CSV.foreach(Rails.root.join("countries.csv"), headers: true) do |row|
+  Country.create! do |country|
+    country.name = row[0]
+  end
+end
 
-
-Package.populate 64 do |package|
-  package.name = Populator.words(1..5).titleize
-  package.days = 3..8
-  package.nights = 2..7
-  package.itinerary = Populator.paragraphs(3..6)
-  package.price = 600..2500
-  package.agent_id = 1..2
-  package.includes = Populator.sentences(1)
-  package.approved = false
+puts "Importing province..."
+CSV.foreach(Rails.root.join("province.csv"), headers: true) do |row|
+  Province.create! do |province|
+    province.name = row[0]
+    province.country_id = row[1]
+  end
 end
