@@ -2,7 +2,7 @@
 <div class="container">
 <div class="center jumbotron">
 	<p><%= render 'pages/shared/search' %></p></br>
-<h1> Tour Packages</h1>
+<h1><%= @country.name %> Tour Packages</h1>
 <table class="table table-hover table-bordered" >
   <tr>
     <th>Package Name &nbsp; &nbsp; </th>
@@ -13,7 +13,7 @@
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
   </tr>
-<% @results.each do |result| %>
+<% @result.each do |result| %>
     <tr>
     <td><%= result.name%></td> 
 	<td><%= result.country.name%></td> 
