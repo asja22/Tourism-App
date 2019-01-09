@@ -16,7 +16,7 @@ CSV.foreach(Rails.root.join("province.csv"), headers: true) do |row|
   end
 end
 
-puts "Populating Packages..."
+puts "Populating..."
 Package.populate 64 do |package|
   package.name = Populator.words(1..5).titleize
   package.days = 3..8

@@ -86,5 +86,14 @@ class PackagesController < ApplicationController
         render 'approval'
       end
   end
+  
+  def search
+    if params[:country].blank? 
+       redirect_to(root_path, alert: "Empty field!") and return  
+     else
+        @package = params[:country].downcase 
+        @results = Package.all.where("lower(country_id) LIKE ?" ,"%#{@package}%") 
+     end 
+  end
       
 end

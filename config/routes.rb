@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/approval', to: 'packages#approval'
   put 'approve/:id', to: 'packages#approve', as: :approve #(approve_path in approval.html.erb)
   get '/packages_agent/:id', to: 'packages#packages_agent', as: :packages_agent
+   get '/search', to: 'packages#search'
 
   #get '/packages_new', to:'packages#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

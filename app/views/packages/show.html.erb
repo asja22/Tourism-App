@@ -48,16 +48,18 @@
 <% if current_agent %>
 <p><%= link_to "Edit", edit_package_path(@package), class: "btn btn-primary" %></p>
 <p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
-<% end %>
 
-<% if current_admin %>
+
+<% elsif current_admin %>
 <p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Package list", packages_path, class: "btn btn-primary" %></p>
 
+<% else %>
+<p><%= link_to "Back",:back, class: "btn btn-primary" %></p>
 <% end %>
 
 </div>
 </div>
-	<p><%= link_to "Packages home", packages_home_path, class: "btn btn-primary" %></p>
+    <p><%= link_to "Packages home", packages_home_path, class: "btn btn-primary" %></p>
 	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>
 </center>

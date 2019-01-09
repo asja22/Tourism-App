@@ -5,10 +5,11 @@
 
 <% if current_user %>
 <P>Welcome ! <%= current_user.name %></p>
-<P><%= link_to 'View Profile', current_user, class: "btn btn-primary" %></p>
+<p><%= render 'pages/shared/search' %></p></br>
+<!--<P><%= link_to 'View Profile', current_user, class: "btn btn-primary" %></p>
 <P><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "btn btn-primary" %></p>
-
+-->
 <% elsif current_admin %>
 <P>Welcome Admin! <%= current_admin.name %></p>
 <P><%= link_to 'Admin Home Page', admin_home_path, class: "btn btn-primary" %></p>
@@ -22,9 +23,9 @@
 <p><%= link_to "Agent Sign Out", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
 <% else %>
-
-<p><%= link_to "Sign In", new_user_session_path , class: "btn btn-primary"%></p>
-<p><%= link_to "New User Registration", new_user_registration_path , class: "btn btn-primary"%></p>
+<p><%= render 'pages/shared/search' %></p></br>
+<!--<p><%= link_to "Sign In", new_user_session_path , class: "btn btn-primary"%></p>
+<p><%= link_to "New User Registration", new_user_registration_path , class: "btn btn-primary"%></p> -->
 <% end %>
 
 
