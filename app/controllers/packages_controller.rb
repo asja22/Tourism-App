@@ -92,8 +92,11 @@ class PackagesController < ApplicationController
        redirect_to(root_path, alert: "Empty field!") and return  
      else
         @package = params[:country].downcase 
-        @result = Package.all.where("cast(country_id as text) LIKE ?" ,"%#{@package}%") 
+        @result = Package.all.where("cast(country_id as text) LIKE ?" ,"%#{@package}%").order('name')
+        
         @country = Country.find(params[:country])
+        
+        @province = Province.all.where(:country_id => @country.id).order('name')
         #@results = Package.all.where("(country_id) LIKE ?" ,"%#{@package}%") 
         #@results = Package.all.where("lower(country_id(#{@package})) LIKE ?") 
      end 
