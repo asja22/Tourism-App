@@ -81,7 +81,7 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
       if @package.update_attribute(:approved, true)
         flash[:success] = "Tour Package Approved for Publishing"
-              redirect_to @package
+              redirect_to approval_path
       else
         render 'approval'
       end
@@ -92,7 +92,7 @@ class PackagesController < ApplicationController
        redirect_to(root_path, alert: "Empty field!") and return  
      else
         @package = params[:country].downcase 
-        @result = Package.all.where("cast(country_id as text) LIKE ?" ,"%#{@package}%").order('name')
+        @result = Package.all.where("cast(country_id as text) LIKE ?" ,"%#{@package}%").order('name').approved
         
         @country = Country.find(params[:country])
         

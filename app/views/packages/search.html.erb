@@ -18,7 +18,7 @@
    <dd><%=link_to result.name, package_path(result)%> (Dep Date: <%= result.departure %>) </dd>
 </dl>
 	<%end%>
-	<%end%>
+ <%end%>
 <% end %>
 </div>
 
@@ -50,5 +50,5 @@
 </table> -->  
 </div>
 </div>
-	<p><%= link_to "Back", root_path, class: "btn btn-primary" %></p>
+	<p><%= link_to "Back", :back, class: "btn btn-primary" %></p>
 </center>

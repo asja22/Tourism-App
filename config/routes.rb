@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
   get '/help', to: 'pages#help'
   get '/contact', to: 'pages#contact'
+  get '/destinations', to: 'pages#destinations'
   
   resources :packages
   get '/new', to: 'packages#new'

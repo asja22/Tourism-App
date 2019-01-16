@@ -10,4 +10,5 @@ class Package < ApplicationRecord
   validates :departure, presence: true, length: { maximum: 15 }
   
   scope :approved?, -> { where(:approved => false) }
+  scope :approved, -> { where(:approved => true) }
 end
