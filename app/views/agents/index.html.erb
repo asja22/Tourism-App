@@ -13,12 +13,11 @@
     <% else %>
 	<th>No of Packages &nbsp; &nbsp; </th>	
 	<% end %>
-	<th> &nbsp; &nbsp; </th>
   </tr>
   
 <% @agent.each do |agent| %>
   <tr>
-    <td><%= agent.name%></td> 
+    <td><%= link_to agent.name, agent_path(agent)%></td> 
 	<td><%= agent.email%></td> 
 	<td><%= agent.created_at.to_date%></td> 
   <% if current_admin %>
@@ -31,7 +30,6 @@
   <% else %>
     <td><%= agent.packages.count%></td> 
   <% end%> 
-  <td><%= link_to "View", agent_path(agent) %></td>
   </tr>
 <% end %>
 </table>

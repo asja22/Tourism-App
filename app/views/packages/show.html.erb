@@ -47,7 +47,8 @@
 
 <% if current_agent %>
 <p><%= link_to "Edit", edit_package_path(@package), class: "btn btn-primary" %></p>
-<p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Back", :back, class: "btn btn-primary" %>
+<!--<p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>-->
 
 
 <% elsif current_admin %>

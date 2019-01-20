@@ -6,15 +6,13 @@
   <tr>
     <th>Agent Name &nbsp; &nbsp; </th>
 	<th>E-Mail &nbsp; &nbsp; </th>
-	<th>Date of Joining &nbsp; &nbsp; </th>
-	<th> &nbsp; &nbsp; </th>	
+	<th>Date of Joining &nbsp; &nbsp; </th>	
   </tr>
 <% @user.each do |user| %>
   <tr>
-    <td><%= user.name%></td> 
+    <td><%= link_to user.name, user_path(user)%></td> 
 	<td><%= user.email%></td> 
 	<td><%= user.created_at.to_date%></td> 
-	<td><%= link_to "View", user_path(user) %></td> 
   </tr>
 <% end %>
 </table>
