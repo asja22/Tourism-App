@@ -10,17 +10,15 @@
 	<th>Date of Departure &nbsp; &nbsp; </th>
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<th>Approval &nbsp; &nbsp; </th>
-	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>	
   </tr>
 <% @package.each do |package| %>
   <tr>
-    <td><%= package.name%></td> 
+    <td><%=  link_to package.name, package %></td> 
 	<td><%= package.country.name%></td> 
 	<td><%= package.province.name%></td> 
 	<td><%= package.departure%></td> 
 	<td><%= link_to package.agent.name, agent_path(package)%></td> 
-	<td><%= link_to "Approve_Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" } %></td>
-	<td><%= link_to "View", package %></td> 
+	<td><%= link_to "Approve Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" } , class: "btn btn-primary" %></td>
   </tr>
 <% end %>
 </table>

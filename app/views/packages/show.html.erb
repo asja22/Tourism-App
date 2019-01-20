@@ -51,8 +51,9 @@
 
 
 <% elsif current_admin %>
-<p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>
-<p><%= link_to "Package list", packages_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Back", :back, class: "btn btn-primary" %>
+<!--<p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Package list", packages_path, class: "btn btn-primary" %></p>-->
 
 <% else %>
 <p><%= link_to "Back",:back, class: "btn btn-primary" %></p>
