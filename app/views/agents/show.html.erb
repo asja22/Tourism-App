@@ -30,9 +30,9 @@
 <% end %>  -->
 	
 <% if current_admin %>  
-	<% prev=Rails.application.routes.recognize_path(request.referrer) %>
-	<p>hi<%= prev[:controller] %></p>
-      <% if prev[:controller] == "agents" %>
+	<% prev=URI(request.referer) %>
+	<p>hi<%= prev.path %></p>
+      <% if prev.path == '/agents' %>
   	     <% if @agent.status? %>
   		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
   		 <% else %>
@@ -40,7 +40,7 @@
   	     <% end %>
 		 <p><%= link_to "Back",agents_path, class: "btn btn-primary" %></p>
          <!--<p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>-->
-	  <% elsif prev[:controller] == "packages" %> 
+	  <% else %> 
 	  <p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
 	     <!--<p><%= link_to "Packages List", packages_path, class: "btn btn-primary" %></p>
 	     <p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>-->
