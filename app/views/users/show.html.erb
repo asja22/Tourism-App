@@ -21,7 +21,7 @@
   </tr>
 </table>
 
-	<p><%= link_to "Back", :back, class: "btn btn-primary" %></p>
+	<p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
 	<% if current_agent %>
 	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>
 	<% end %>

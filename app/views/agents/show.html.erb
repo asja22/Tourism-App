@@ -38,10 +38,10 @@
   		 <% else %>
   		    <p><%= link_to "Activate Agent",activate_path(@agent), method: :put, data: { confirm: "You sure Activate Agent ?" }, class: "btn btn-primary" %></p>
   	     <% end %>
-		 <p><%= link_to "Back", :back, class: "btn btn-primary" %></p>
+		 <p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
          <!--<p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>-->
 	  <% elsif cont[:controller] == 'packages' %> 
-	  <p><%= link_to "Back", :back, class: "btn btn-primary" %></p>
+	  <p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
 	     <!--<p><%= link_to "Packages List", packages_path, class: "btn btn-primary" %></p>
 	     <p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>-->
 	  <% end %>
