@@ -31,7 +31,7 @@
 	
 
 <% if current_admin %>
-      <% cont=Rails.application.routes.recognize_path(request.referrer) %>  
+      <% cont=Rails.application.routes.recognize_path(request.referer) %>  
       <% if cont[:controller] == 'agents' %>
   	     <% if @agent.status? %>
   		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
