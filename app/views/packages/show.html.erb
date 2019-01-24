@@ -47,17 +47,17 @@
 
 <% if current_agent %>
 <p><%= link_to "Edit", edit_package_path(@package), class: "btn btn-primary" %></p>
-<p><%= link_to "Back", :back, class: "btn btn-primary" %>
+<p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %>
 <!--<p><%= link_to "Back to Package list", packages_path, class: "btn btn-primary" %></p>-->
 
 
 <% elsif current_admin %>
-<p><%= link_to "Back", :back, class: "btn btn-primary" %>
+<p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %>
 <!--<p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Package list", packages_path, class: "btn btn-primary" %></p>-->
 
 <% else %>
-<p><%= link_to "Back",:back, class: "btn btn-primary" %></p>
+<p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
 <% end %>
 
 </div>
