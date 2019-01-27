@@ -32,6 +32,7 @@
 <% if current_admin %>  
 	
 	<p>Previous controller name: <%= @prev %></p>
+	<p>Previous page url: <%= url_for(:back)%></p>
       <% if @prev == "agents" %>
   	     <% if @agent.status? %>
   		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
