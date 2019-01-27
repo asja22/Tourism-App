@@ -33,6 +33,11 @@
 	
 	<p>Previous controller name: <%= @prev %></p>
 	<p>Previous page url: <%= url_for(:back)%></p>
+	<% if request.env["HTTP_REFERER"].present? %>
+	  <p><%="request.referrer present "%></p>
+	<% else %>
+	  <p><%="request referrer  not present "%></p>
+	<% end %>
       <% if @prev == "agents" %>
   	     <% if @agent.status? %>
   		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
