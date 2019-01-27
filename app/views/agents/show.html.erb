@@ -33,6 +33,7 @@
 	
 	<p>Previous controller name: <%= @prev %></p>
 	<p>Previous page url: <%= url_for(:back)%></p>
+	<p>http_referrer-> <%= request.env["HTTP_REFERER"] %>
 	<% if request.env["HTTP_REFERER"].present? %>
 	  <p><%="request.referrer present "%></p>
 	<% else %>
