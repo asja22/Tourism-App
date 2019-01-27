@@ -13,7 +13,7 @@ class AgentsController < ApplicationController
   def show
     #if current_agent
      @agent = Agent.find(params[:id])
-     #@prev=Rails.application.routes.recognize_path(request.referrer)
+     @prev=Rails.application.routes.recognize_path(request.referrer)[:controller] 
     #elsif current_admin
     #  cont=Rails.application.routes.recognize_path(request.referrer) 
     #  if cont[:controller] == 'agents'
