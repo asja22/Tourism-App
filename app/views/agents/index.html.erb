@@ -17,7 +17,7 @@
   
 <% @agent.each do |agent| %>
   <tr>
-    <td><%= link_to agent.name, agent_path(agent)%></td> 
+    <td><%= link_to agent.name, agentshow_path(agent)%></td> 
 	<td><%= agent.email%></td> 
 	<td><%= agent.created_at.to_date%></td> 
   <% if current_admin %>

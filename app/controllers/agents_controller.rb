@@ -13,7 +13,23 @@ class AgentsController < ApplicationController
   def show
     #if current_agent
      @agent = Agent.find(params[:id])
-     @prev=Rails.application.routes.recognize_path(request.referrer)[:controller] 
+     #@prev=Rails.application.routes.recognize_path(request.referrer)[:controller] 
+    #elsif current_admin
+    #  cont=Rails.application.routes.recognize_path(request.referrer) 
+    #  if cont[:controller] == 'agents'
+     #   @agent = Agent.find(params[:id])
+    #  elsif cont[:controller] == 'packages'
+     #   @package = Package.find(params[:id])
+      #  @agent = @package.agent
+      #end
+      #end
+  end
+  
+  def agent_show
+    @agent = Agent.find(params[:id])
+    #if current_agent
+     #@agent = Agent.find(params[:id])
+     #@prev=Rails.application.routes.recognize_path(request.referrer)[:controller] 
     #elsif current_admin
     #  cont=Rails.application.routes.recognize_path(request.referrer) 
     #  if cont[:controller] == 'agents'
@@ -29,9 +45,9 @@ class AgentsController < ApplicationController
     @agent = Agent.find(params[:id])
       if @agent.update_attribute(:status, true)
         flash[:success] = "Agent Profile Activated"
-              redirect_to @agent
+              redirect_to agentshow_path
       else
-        render 'show'
+        render 'agentshow'
       end
   end
   
@@ -39,9 +55,9 @@ class AgentsController < ApplicationController
     @agent = Agent.find(params[:id])
       if @agent.update_attribute(:status, false)
         flash[:success] = "Agent Profile De-Activated"
-              redirect_to @agent
+              redirect_to agentshow_path
       else
-        render 'show'
+        render 'agentshow'
       end
   end
   

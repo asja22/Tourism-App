@@ -30,8 +30,8 @@
 <% end %>  -->
 	
 <% if current_admin %>  
-	
-	<p>Previous controller name: <%= @prev %></p>
+	<p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
+	<!--<p>Previous controller name: <%= @prev %></p>
 	<p>Previous page url: <%= url_for(:back)%></p>
 	<p>http_referrer-> <%= request.env["HTTP_REFERER"] %>
 	<% if request.env["HTTP_REFERER"].present? %>
@@ -39,6 +39,7 @@
 	<% else %>
 	  <p><%="request referrer  not present "%></p>
 	<% end %>
+	
       <% if @prev == "agents" %>
   	     <% if @agent.status? %>
   		    <p><%= link_to "De-Activate Agent",deactivate_path(@agent), method: :put, data: { confirm: "You sure De-Activate Agent ?" }, class: "btn btn-primary" %></p>
@@ -46,12 +47,12 @@
   		    <p><%= link_to "Activate Agent",activate_path(@agent), method: :put, data: { confirm: "You sure Activate Agent ?" }, class: "btn btn-primary" %></p>
   	     <% end %>
 		 <p><%= link_to "Back",agents_path, class: "btn btn-primary" %></p>
-         <!--<p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>-->
-	  <% elsif @prev == "packages" %> 
+         <p><%= link_to "Back", agents_path, class: "btn btn-primary" %></p>
+	  <% elsif @prev == "packages" %>
 	  <p><%= link_to "Back","javascript:history.go(-1);", class: "btn btn-primary" %></p>
-	     <!--<p><%= link_to "Packages List", packages_path, class: "btn btn-primary" %></p>
-	     <p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>-->
-	  <% end %>
+	     <p><%= link_to "Packages List", packages_path, class: "btn btn-primary" %></p>
+	     <p><%= link_to "Approval Page", approval_path, class: "btn btn-primary" %></p>
+	  <% end %>-->
 <% elsif current_agent %>
 	<p><%= link_to "Back", agent_home_path, class: "btn btn-primary" %></p>
 	<p><%= link_to "Back to home", root_path, class: "btn btn-primary" %></p>

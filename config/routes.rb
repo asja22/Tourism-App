@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :agents , only: [:index,:show]
   put 'activate/:id', to: 'agents#activate', as: :activate
   put 'deactivate/:id', to: 'agents#deactivate', as: :deactivate
+  get 'agent_show/:id', to: 'agents#agent_show', as: :agentshow 
   
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions" ,passwords: 'users/passwords',registrations: 'users/registrations'}
   resources :users , only: [:index,:show]
