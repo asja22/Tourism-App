@@ -15,6 +15,16 @@
     <th><%= @agent.email%></th>	
   </tr>
   
+  <% if current_admin %>
+  <tr>
+    <th>Agent Status: &nbsp; &nbsp; &nbsp;</th>
+	<% if @agent.status? %>
+   		<th> Active </th>
+	<% else %>
+   		<th> De-Activated</th>
+	<% end %>
+  </tr>
+  <% end %>
   <tr>
     <th>Join date: &nbsp; &nbsp; &nbsp;</th>
     <th><%= @agent.created_at.to_date%></th>	
