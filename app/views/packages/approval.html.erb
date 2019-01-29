@@ -11,16 +11,18 @@
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<th>Approval &nbsp; &nbsp; </th>
   </tr>
-<% @package.each do |package| %>
-  <tr>
-    <td><%=  link_to package.name, package %></td> 
-	<td><%= package.country.name%></td> 
-	<td><%= package.province.name%></td> 
-	<td><%= package.departure%></td> 
-	<td><%= link_to package.agent.name, agent_path(package.agent)%></td> 
-	<td><%= link_to "Approve Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" } , class: "btn btn-primary" %></td>
-  </tr>
-<% end %>
+  <% @package.each do |package| %>
+    <tr id="approve-<%= package.id %>">
+     <td><%= link_to package.name, package %></td> 
+  	<td><%= package.country.name%></td> 
+  	<td><%= package.province.name%></td> 
+  	<td><%= package.departure%></td> 
+  	<td><%= link_to package.agent.name, agent_path(package.agent)%></td> 
+  	<td><%= link_to "Approve Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" } , class: "btn btn-primary", remote: true %></td>
+    </tr>
+  <% end %>
+  
+
 </table>
 </div>
 </div>

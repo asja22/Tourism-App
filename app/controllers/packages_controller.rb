@@ -80,8 +80,11 @@ class PackagesController < ApplicationController
   def approve
     @package = Package.find(params[:id])
       if @package.update_attribute(:approved, true)
-        flash[:success] = "Tour Package Approved for Publishing"
-              redirect_to approval_path
+        #flash.now[:success] = "Tour Package Approved for Publishing"
+          respond_to do |format|
+            format.js
+            format.html { redirect_to approval_path }
+          end
       else
         render 'approval'
       end
