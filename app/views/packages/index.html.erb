@@ -13,8 +13,7 @@
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<% elsif current_agent %>
 	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
-	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
-	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	<!--<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>-->
 	<% end %>
 	
 	
@@ -27,15 +26,14 @@
 	<td><%= package.province.name%></td> 
 	<td><%= package.departure%></td> 
 	<% if package.approved? %> 
-		<td><%= "Approved"%></td>  
+		<td><font color="#06C503"><%= "Approved"%></font></td>  
 	<% else %>
-		<td><%= "Waiting for approval"%></td> 
+		<td><font color="#BF0000"><%= "Waiting for approval"%></font></td> 
 	<% end %>
 	<% if current_admin %> 
 	<td><%= link_to package.agent.name, agent_path(package.agent)%></td>
 	<% elsif current_agent %> 
-	<td><%= link_to "View", package_path(package) %></td> 
-	<td><%= link_to "Edit", edit_package_path(package) %></td> 
+	<!--<td><%= link_to "Edit", edit_package_path(package) %></td> -->
 	<td><%= link_to "Delete", package, method: :delete, data: { confirm: "You sure?" } %></td> <% end %>
     </tr>
     <% end %>
