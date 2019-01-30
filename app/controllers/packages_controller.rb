@@ -59,9 +59,13 @@ class PackagesController < ApplicationController
   end
   
   def destroy
-      Package.find(params[:id]).destroy
-      flash[:success] = "Tour Package Deleted"
-      redirect_to packages_path
+      @package = Package.find(params[:id])
+      @package.destroy
+      #flash[:success] = "Tour Package Deleted"
+         respond_to do |format|
+           format.js
+           format.html { redirect_to packages_path}
+         end
   end
   
   def package_params

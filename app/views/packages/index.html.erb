@@ -13,14 +13,13 @@
 	<th>Agent Name &nbsp; &nbsp; </th>
 	<% elsif current_agent %>
 	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
-	<!--<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>-->
 	<% end %>
 	
 	
   </tr>
 <% @package.each do |package| %>
 
-    <tr>
+    <tr id= "destroy-<%= package.id %>">
     <td><%= link_to package.name, package_path(package) %></td> 
 	<td><%= package.country.name%></td> 
 	<td><%= package.province.name%></td> 
@@ -33,10 +32,10 @@
 	<% if current_admin %> 
 	<td><%= link_to package.agent.name, agent_path(package.agent)%></td>
 	<% elsif current_agent %> 
-	<!--<td><%= link_to "Edit", edit_package_path(package) %></td> -->
-	<td><%= link_to "Delete", package, method: :delete, data: { confirm: "You sure?" } %></td> <% end %>
+	<td><%= link_to "Delete", package, method: :delete, data: { confirm: "You sure?", remote: true }, class: "btn btn-primary", remote: true %></td> 
+	<% end %>
     </tr>
-    <% end %>
+<% end %>
 </table>
 </div>
 </div>
