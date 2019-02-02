@@ -32,7 +32,7 @@
 	<% if current_admin %> 
 	<td><%= link_to package.agent.name, agent_path(package.agent)%></td>
 	<% elsif current_agent %> 
-	<td><%= link_to "Delete", package, method: :delete, data: { confirm: "You sure?", remote: true }, class: "btn btn-primary" %></td> 
+	<td><%= link_to "Delete", package, method: :delete, data: { confirm: "You sure delete package ?\n #{package.name}", remote: true }, class: "btn btn-primary" %></td> 
 	<% end %>
     </tr>
 <% end %>

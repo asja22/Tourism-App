@@ -18,7 +18,7 @@
   	<td><%= package.province.name%></td> 
   	<td><%= package.departure%></td> 
   	<td><%= link_to package.agent.name, agent_path(package.agent)%></td> 
-  	<td><%= link_to "Approve Package",approve_path(package), method: :put, data: { confirm: "You sure check package ?" , remote: true } , class: "btn btn-primary"%></td>
+  	<td><%= link_to "Approve Package",approve_path(package), method: :put, data: { confirm: "You sure approve package?\n #{package.name}" , remote: true } , class: "btn btn-primary"%></td>
     </tr>
   <% end %>
   
