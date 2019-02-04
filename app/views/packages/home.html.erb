@@ -5,7 +5,13 @@
 
 <% if current_agent %>
 <P>Welcome Agent! <%= current_agent.name %></p>
-<P><%= link_to 'Create New Package', new_path, class: "btn btn-primary" %></p>
+	<p><%= link_to 'Create New Package', new_path, class: 'btn btn-primary' %></p>
+<P><%= link_to 'Create New Package - popup', new_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary'}  %></p>
+	<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content"></div>
+	  </div>
+	</div>
 <P><%= link_to 'List of Package', packages_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Back", agent_home_path , class: "btn btn-primary"%></p>
 

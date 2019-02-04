@@ -1,0 +1,20 @@
+$("#modal-window-edit").find(".modal-content").html("<%= j (render 'edit') %>");
+$("#modal-window-edit").modal();
+$('#package_departure').datepicker();
+
+var provinces;
+
+$('#package_province_id');
+
+provinces = $('#package_province_id').html();
+
+$('#package_country_id').change(function() {
+  var country, options;
+  country = $('#package_country_id :selected').text();
+  options = $(provinces).filter(`optgroup[label='${country}']`).html();
+  if (options) {
+    return $('#package_province_id').html(options);
+  } else {
+    return $('#package_province_id').empty();
+  }
+});

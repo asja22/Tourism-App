@@ -28,6 +28,10 @@ class PackagesController < ApplicationController
 
   def new
     @package=current_agent.packages.build
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def show
@@ -36,6 +40,10 @@ class PackagesController < ApplicationController
 
   def edit
     @package=Package.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def create
