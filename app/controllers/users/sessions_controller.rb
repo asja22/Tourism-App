@@ -3,6 +3,7 @@
 class Users::SessionsController < Devise::SessionsController
   include Accessible
   skip_before_action :check_user, only: :destroy
+  respond_to :html, :js
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
