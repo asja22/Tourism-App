@@ -54,7 +54,6 @@
 		<% else %>
         <li class="nav-item active">
   		  <a><%= link_to "Sign In",new_user_session_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-userlogin', class: "btn btn-outline-primary"} %></a>
-
         </li>
         <li class="nav-item active">
   		  <a><%= link_to "New User Registration",new_user_registration_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-userreg', class: "btn btn-outline-success"} %></a>

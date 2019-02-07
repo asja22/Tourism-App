@@ -18,8 +18,18 @@
 <p><%= link_to "Sign Out Agent", destroy_agent_session_path, :method => :delete , class: "btn btn-primary" %></p>
 
 <% else %>
-<p><%= link_to "Agent Sign In", new_agent_session_path , class: "btn btn-primary"%></p>
-<p><%= link_to "New Agent Registration", new_agent_registration_path , class: "btn btn-primary"%></p>
+<p><%= link_to "Agent Sign In", new_agent_session_path ,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-agentlogin', class: "btn btn-primary"} %></p>
+  <div id="modal-agentlogin" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+<p><%= link_to "New Agent Registration", new_agent_registration_path ,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-agentreg', class: "btn btn-primary"} %></p>
+  <div id="modal-agentreg" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
 <p><%= link_to "Home", root_path , class: "btn btn-primary"%></p>
 <% end %>
 
